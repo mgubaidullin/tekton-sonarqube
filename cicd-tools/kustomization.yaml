@@ -3,11 +3,12 @@ kind: Kustomization
 
 namespace: cicd-tools
 
-# Deploy pre-configured SonarQube and Nexus from Red Hat Canada demo catalog.
+# Deploy pre-configured SonarQube from Red Hat Canada demo catalog.
 bases:
   - github.com/redhat-canada-gitops/catalog/sonarqube8/overlays/plugins?ref=master
 
 resources:
+  - workspace-pvc.yaml
   - secret.yaml
   - pipeline.yaml
 
