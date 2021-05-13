@@ -130,6 +130,9 @@
     <profiles>
         <profile>
             <id>openshift</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -147,7 +150,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <activation/>
         </profile>
     </profiles>
 
