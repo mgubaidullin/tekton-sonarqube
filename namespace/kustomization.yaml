@@ -1,3 +1,0 @@
-resources:
-  - cicd-ns.yaml
-  - app-ns.yaml

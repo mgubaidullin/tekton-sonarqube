@@ -8,6 +8,7 @@ bases:
   - github.com/redhat-canada-gitops/catalog/sonarqube8/overlays/plugins?ref=master
 
 resources:
+  - namespaces.yaml
   - workspace-pvc.yaml
   - secret.yaml
   - pipeline.yaml
