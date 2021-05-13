@@ -17,7 +17,7 @@ public class DemoRoute extends RouteBuilder {
         rest()
                 .get("/test")
                 .produces(MediaType.TEXT_PLAIN_VALUE)
-                .route().setBody(constant("OK"));
+                .route().setBody(constant("HELLO"));
 
         from("timer:kafka?period=5s")
                 .routeId("timerRoute")
