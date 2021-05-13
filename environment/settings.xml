@@ -7,9 +7,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <sonar.host.url>
-                    ${env.SONAR_SERVER_HOST}
-                </sonar.host.url>
+                <sonar.host.url>http://sonarqube.cicd-tools.svc.cluster.local:9000</sonar.host.url>
                 <sonar.dependencyCheck.jsonReportPath>target/dependency-check-report.json
                 </sonar.dependencyCheck.jsonReportPath>
                 <sonar.java.pmd.reportPaths>target/pmd.xml</sonar.java.pmd.reportPaths>

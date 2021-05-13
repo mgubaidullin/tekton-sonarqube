@@ -10,7 +10,6 @@ bases:
 resources:
   - namespaces.yaml
   - workspace-pvc.yaml
-  - secret.yaml
   - pipeline.yaml
 
 # Generator options.
