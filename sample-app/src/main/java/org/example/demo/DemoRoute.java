@@ -21,6 +21,6 @@ public class DemoRoute extends RouteBuilder {
 
         from("timer:kafka?period=5s")
                 .routeId("timerRoute")
-                .log("Timer ${headers}");
+                .log("Hello World ${headers}");
     }
 }
