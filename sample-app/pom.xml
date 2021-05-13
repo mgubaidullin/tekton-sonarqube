@@ -139,6 +139,9 @@
                         <groupId>org.jboss.redhat-fuse</groupId>
                         <artifactId>fabric8-maven-plugin</artifactId>
                         <version>${fuse.bom.version}</version>
+                        <configuration>
+                            <recreate>true</recreate>
+                        </configuration>
                         <executions>
                             <execution>
                                 <goals>
