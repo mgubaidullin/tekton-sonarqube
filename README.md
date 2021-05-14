@@ -22,11 +22,15 @@ cd tekton-sonarqube
 oc apply -k environment
 ```
 
+Check if SonarQube pods are up and running and Open SonarQube UI is available at http://sonarqube-cicd-tools.apps.hostname 
+
 ## Demo
 ### Run pipeline
 Run sample-app-pipeline
 ```
+oc apply -f environment/pipeline-run.yaml
 ```
+
 ### Check results
  - Check Pipeline Runs
- - Open SonarQube UI http://sonarqube-cicd-tools.apps.hostname
+ - Check SonarQube UI 
