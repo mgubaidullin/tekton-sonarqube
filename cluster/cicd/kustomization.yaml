@@ -20,10 +20,3 @@ configMapGenerator:
   - name: maven-settings-cm
     files:
       - settings.xml
-
----
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: app
-resources:
-  - pipeline-admin-rolebinding.yaml
