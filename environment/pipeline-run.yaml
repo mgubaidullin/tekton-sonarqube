@@ -1,7 +1,8 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  generateName: sample-app-pipeline-run
+  name: sample-app-pipeline-run
+  namespace: cicd-tools
 spec:
   pipelineRef:
     name: sample-app-pipeline
