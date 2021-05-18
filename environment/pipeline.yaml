@@ -79,28 +79,20 @@ spec:
           workspace: shared-workspace
         - name: maven-settings
           workspace: maven-settings-cm
-    - name: maven-deploy
-      params:
-        - name: MAVEN_IMAGE
-          value: >-
-            gcr.io/cloud-builders/mvn@sha256:57523fc43394d6d9d2414ee8d1c85ed7a13460cbb268c3cd16d28cfb3859e641
-        - name: GOALS
-          value:
-            - 'fabric8:apply'
-        - name: PROXY_PROTOCOL
-          value: http
-        - name: CONTEXT_DIR
-          value: sample-app
+    - name: build
+      taskRef:
+        name: buildah
+        kind: ClusterTask
       runAfter:
         - maven-sonar
-      taskRef:
-        kind: ClusterTask
-        name: maven
       workspaces:
         - name: source
-          workspace: shared-workspace
-        - name: maven-settings
-          workspace: maven-settings-cm
+          workspace: workspace
+      params:
+        - name: IMAGE
+          value: "image-registry.openshift-image-registry.svc:5000/demo/sample-app"
+        - name: TLSVERIFY
+          value: "false"
   workspaces:
     - name: shared-workspace
     - name: maven-settings-cm
