@@ -1,14 +1,20 @@
-apiVersion: route.openshift.io/v1
 kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
   name: sample-app
+  creationTimestamp: '2021-05-18T19:44:16Z'
   labels:
     app: sample-app
+    app.kubernetes.io/component: sample-app
+    app.kubernetes.io/instance: sample-app
+    app.kubernetes.io/part-of: sample-app-app
+  annotations:
+    openshift.io/host.generated: 'true'
 spec:
-  port:
-    targetPort: 8080-tcp
   to:
     kind: Service
     name: sample-app
     weight: 100
+  port:
+    targetPort: 8080-tcp
   wildcardPolicy: None

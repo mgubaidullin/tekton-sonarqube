@@ -4,6 +4,9 @@ metadata:
   name: sample-app
   labels:
     app: sample-app
+    app.kubernetes.io/component: sample-app
+    app.kubernetes.io/instance: sample-app
+    app.kubernetes.io/part-of: sample-app
 spec:
   replicas: 1
   selector:
