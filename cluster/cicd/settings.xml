@@ -13,16 +13,8 @@
                 <sonar.java.checkstyle.reportPaths>target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths>
             </properties>
         </profile>
-        <profile>
-            <id>openshift</id>
-            <properties>
-                <fabric8.namespace>app</fabric8.namespace>
-            </properties>
-        </profile>
     </profiles>
     <activeProfiles>
         <activeProfile>sonar</activeProfile>
-        <activeProfile>coverage</activeProfile>
-        <activeProfile>openshift</activeProfile>
     </activeProfiles>
 </settings>
