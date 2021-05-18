@@ -39,7 +39,7 @@ oc apply -k cluster/application
 ### Run pipeline
 Run sample-app-pipeline
 ```
-oc apply -f cluster/cicd/pipeline-run.yaml
+oc create -f cluster/cicd/pipeline-run.yaml
 ```
 
 ### Check results
