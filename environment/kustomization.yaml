@@ -1,8 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 namespace: cicd-tools
-
 # Deploy pre-configured SonarQube from Red Hat Canada demo catalog.
 bases:
   - github.com/redhat-canada-gitops/catalog/sonarqube8/overlays/plugins?ref=master
@@ -11,16 +9,21 @@ resources:
   - namespaces.yaml
   - workspace-pvc.yaml
   - pipeline.yaml
-  - pipeline-admin-rolebinding.yaml
 
 # Generator options.
 generatorOptions:
   labels:
     app: maven-settings
   disableNameSuffixHash: true
-
 # Create a ConfigMap from custom settings.xml file.
 configMapGenerator:
   - name: maven-settings-cm
     files:
       - settings.xml
+
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: app
+resources:
+  - pipeline-admin-rolebinding.yaml
