@@ -9,7 +9,6 @@ resources:
   - namespaces.yaml
   - workspace-pvc.yaml
   - pipeline.yaml
-  - pipeline-run.yaml
 
 # Generator options.
 generatorOptions:

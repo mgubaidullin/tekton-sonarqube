@@ -20,6 +20,7 @@ spec:
       containers:
         - name: sample-app
           image: image-registry.openshift-image-registry.svc:5000/app/sample-app:latest
+          imagePullPolicy: Always
           resources:
             limits:
               memory: 512Mi
