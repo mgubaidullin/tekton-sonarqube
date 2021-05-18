@@ -79,30 +79,30 @@ spec:
         - name: maven-settings
           workspace: maven-settings-cm
     - name: buildah
-        params:
-        - name: IMAGE
-          value: 'image-registry.openshift-image-registry.svc:5000/app/sample-app'
-        - name: BUILDER_IMAGE
-          value: >-
-            registry.redhat.io/rhel8/buildah@sha256:6a68ece207bc5fd8db2dd5cc2d0b53136236fb5178eb5b71eebe5d07a3c33d13
-        - name: STORAGE_DRIVER
-          value: vfs
-        - name: DOCKERFILE
-          value: ./Dockerfile
-        - name: CONTEXT
-          value: sample-app
-        - name: TLSVERIFY
-          value: 'false'
-        - name: FORMAT
-          value: oci
-        runAfter:
-          - maven-sonar
-        taskRef:
-          kind: ClusterTask
-          name: buildah
-        workspaces:
-          - name: source
-            workspace: shared-workspace
+      params:
+      - name: IMAGE
+        value: 'image-registry.openshift-image-registry.svc:5000/app/sample-app'
+      - name: BUILDER_IMAGE
+        value: >-
+          registry.redhat.io/rhel8/buildah@sha256:6a68ece207bc5fd8db2dd5cc2d0b53136236fb5178eb5b71eebe5d07a3c33d13
+      - name: STORAGE_DRIVER
+        value: vfs
+      - name: DOCKERFILE
+        value: ./Dockerfile
+      - name: CONTEXT
+        value: sample-app
+      - name: TLSVERIFY
+        value: 'false'
+      - name: FORMAT
+        value: oci
+      runAfter:
+        - maven-sonar
+      taskRef:
+        kind: ClusterTask
+        name: buildah
+      workspaces:
+        - name: source
+          workspace: shared-workspace
   workspaces:
     - name: shared-workspace
     - name: maven-settings-cm
