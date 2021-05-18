@@ -54,21 +54,11 @@
 
     <build>
         <plugins>
-            <!-- 	<plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>${java-sdk.version}</source>
-                    <target>${java-sdk.version}</target>
-                </configuration>
-            </plugin> -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <!-- Spring Boot Actuator displays build-related information
-                          if a META-INF/build-info.properties file is present -->
                         <goals>
                             <goal>build-info</goal>
                             <goal>repackage</goal>
